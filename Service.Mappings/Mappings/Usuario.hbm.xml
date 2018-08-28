@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   namespace="Domain.Entity"
+				   assembly="Domain"
+>
+  <!-- This mapping is created specifically for NH-1059 -->
+  <class name="Domain.Entity.Usuario" table="Usuario" >
+
+    <id name="IdUsuario" column="ID_USUARIO" type="int">
+      	<generator class="increment"/>
+    </id>
+
+    <property name="Nome" type="string" column="nome" not-null="true" />
+    <property name="CPF" type="string" column="cpf" length="11" not-null="true" />
+    <property name="Email" type="string" column="email" not-null="true" />
+    <property name="TipoUsuario" column="id_tipo_usuario" type="Domain.Common.TipoUsuarioEnum, Domain.Common"/>
+    <array name="Bandas" table="banda" inverse="true"  cascade="all">
+      <key column="id_responsavel"/>
+      <index column="id_banda"/>
+      <one-to-many class="Banda" />
+    </array>
+    
+    <array name="Estabelecimentos" table="estabelecimento" inverse="true"  cascade="all">
+      <key column="id_responsavel"/>
+      <index column="id_estabelecimento"/>
+      <one-to-many class="Estabelecimentop" />
+    </array>
+    <!--
+		The issue arise when there is not already a <join> element
+		in the root class.  If the <join> element below is uncommented,
+		everything is fine.
+		-->
+    
+
+    <!--
+		<join table="junk">
+			<key column="worker_id"/>
+			<property name="Junk"/>
+		</join>
+		-->
+
+    <!--<subclass name="PaidWorker"
+				  discriminator-value="P"
+				  lazy="true">
+      
+      <join table="PaidWorker" fetch="join">
+        <key column="worker_id"/>
+        <property name="Wage"/>
+      </join>
+    </subclass>-->
+  </class>
+</hibernate-mapping>
