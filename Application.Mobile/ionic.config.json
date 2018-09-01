@@ -1,0 +1,7 @@
+{
+  "name": "tocaaqui",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
