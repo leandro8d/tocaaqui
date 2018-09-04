@@ -1,0 +1,9 @@
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Domain.Common\bin\Debug\netcoreapp2.0\Domain.Common.deps.json
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Domain.Common\bin\Debug\netcoreapp2.0\Domain.Common.dll
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Domain.Common\bin\Debug\netcoreapp2.0\Domain.Common.pdb
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Domain.Common\obj\Debug\netcoreapp2.0\Domain.Common.csproj.CoreCompileInputs.cache
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Domain.Common\obj\Debug\netcoreapp2.0\Domain.Common.AssemblyInfoInputs.cache
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Domain.Common\obj\Debug\netcoreapp2.0\Domain.Common.AssemblyInfo.cs
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Domain.Common\obj\Debug\netcoreapp2.0\Domain.Common.dll
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Domain.Common\obj\Debug\netcoreapp2.0\Domain.Common.pdb
+C:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Domain.Common\obj\Debug\netcoreapp2.0\Domain.Common.csprojAssemblyReference.cache

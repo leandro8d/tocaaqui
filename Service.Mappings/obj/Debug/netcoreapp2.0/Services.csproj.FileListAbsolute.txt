@@ -1,0 +1,12 @@
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Service.Mappings\bin\Debug\netcoreapp2.0\Services.deps.json
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Service.Mappings\bin\Debug\netcoreapp2.0\Services.dll
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Service.Mappings\bin\Debug\netcoreapp2.0\Services.pdb
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Service.Mappings\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Logging.Abstractions.dll
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Service.Mappings\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Logging.Abstractions.xml
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Service.Mappings\obj\Debug\netcoreapp2.0\Services.csproj.CoreCompileInputs.cache
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Service.Mappings\obj\Debug\netcoreapp2.0\Services.AssemblyInfoInputs.cache
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Service.Mappings\obj\Debug\netcoreapp2.0\Services.AssemblyInfo.cs
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Service.Mappings\obj\Debug\netcoreapp2.0\Services.csproj.CopyComplete
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Service.Mappings\obj\Debug\netcoreapp2.0\Services.dll
+c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Service.Mappings\obj\Debug\netcoreapp2.0\Services.pdb
+C:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Service.Mappings\obj\Debug\netcoreapp2.0\Services.csprojAssemblyReference.cache
