@@ -800,29 +800,6 @@
         "runtime": {
           "lib/netcoreapp2.0/_._": {}
         }
-      },
-      "Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
-        "dependencies": {
-          "Domain.Common": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Domain.dll": {}
-        }
-      },
-      "Domain.Common/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Domain.Common.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Domain.Common.dll": {}
-        }
       }
     }
   },
@@ -3228,21 +3205,10 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "Domain/1.0.0": {
-      "type": "project",
-      "path": "../Domain.Entity/Domain.csproj",
-      "msbuildProject": "../Domain.Entity/Domain.csproj"
-    },
-    "Domain.Common/1.0.0": {
-      "type": "project",
-      "path": "../Domain.Common/Domain.Common.csproj",
-      "msbuildProject": "../Domain.Common/Domain.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Domain >= 1.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
       "NHibernate >= 5.1.3",
       "NHibernate.Mapping.Attributes >= 5.1.0",
@@ -3278,11 +3244,7 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {
-            "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Domain.Entity\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Domain.Entity\\Domain.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

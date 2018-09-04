@@ -4,7 +4,7 @@
 				   assembly="Domain"
 >
   <!-- This mapping is created specifically for NH-1059 -->
-  <class name="Domain.Entity.Banda" table="Banda" >
+  <class name="Domain.Entity.Banda" table="Banda" lazy="true">
 
     <id name="IdBanda" column="ID_BANDA" type="int">
       	<generator class="increment"/>

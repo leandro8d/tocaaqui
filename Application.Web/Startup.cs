@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Domain.Entity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Repository;
 using Services.Infrastructure;
 
 namespace Application.Web
@@ -17,6 +19,7 @@ namespace Application.Web
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            
         }
 
         public IConfiguration Configuration { get; }
@@ -24,10 +27,18 @@ namespace Application.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<AppSessionFactory>();
-            services.AddScoped(x => x.GetService<AppSessionFactory>().OpenSession());
+            DataBase.OpenSession();
            
-            services.AddMvc();
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        }));
+
+            services.AddMvc() .AddJsonOptions(
+            options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+        );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,7 +48,7 @@ namespace Application.Web
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors("MyPolicy");
             app.UseMvc();
         }
     }

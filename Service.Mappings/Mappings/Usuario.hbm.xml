@@ -14,7 +14,7 @@
     <property name="CPF" type="string" column="cpf" length="11" not-null="true" />
     <property name="Email" type="string" column="email" not-null="true" />
     <property name="TipoUsuario" column="id_tipo_usuario" type="Domain.Common.TipoUsuarioEnum, Domain.Common"/>
-    <array name="Bandas" table="banda" inverse="true"  cascade="all">
+    <array name="Bandas" table="banda" inverse="true"   cascade="all">
       <key column="id_responsavel"/>
       <index column="id_banda"/>
       <one-to-many class="Banda" />
@@ -23,7 +23,7 @@
     <array name="Estabelecimentos" table="estabelecimento" inverse="true"  cascade="all">
       <key column="id_responsavel"/>
       <index column="id_estabelecimento"/>
-      <one-to-many class="Estabelecimentop" />
+      <one-to-many class="Estabelecimento" />
     </array>
     <!--
 		The issue arise when there is not already a <join> element
@@ -31,7 +31,8 @@
 		everything is fine.
 		-->
     
-
+
+
     <!--
 		<join table="junk">
 			<key column="worker_id"/>

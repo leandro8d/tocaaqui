@@ -14,25 +14,25 @@ namespace Application.Web.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        private AppSessionFactory sessao { get; set; }
-        public ValuesController(AppSessionFactory session) {
-            sessao = session;
+        //private AppSessionFactory sessao { get; set; }
+        public ValuesController() {
+            //sessao = session;
         }
         // GET api/values
         [HttpGet]
         public JsonResult Get()
         {
-            var a = new Usuario();
-            a.Nome = "Leandro";
-            a.Email = "asdsad";
-            a.CPF = "ASD";
-            a.TipoUsuario = TipoUsuarioEnum.MUSICO;
-            var section = sessao.OpenSession();
-            var transaction = section.BeginTransaction();
-            var list = section.Query<Usuario>().ToList(); ;
+            //var a = new Usuario();
+            //a.Nome = "Leandro";
+            //a.Email = "asdsad";
+            //a.CPF = "ASD";
+            //a.TipoUsuario = TipoUsuarioEnum.MUSICO;
+            //var section = sessao.OpenSession();
+            //var transaction = section.BeginTransaction();
+            //var list = section.Query<Usuario>().ToList(); ;
            
             
-            return Json(list);
+            return Json("");
         }
 
         // GET api/values/5

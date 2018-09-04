@@ -18,6 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Domain.Entity\Domain.csproj" />
+    <ProjectReference Include="..\Repository.Core\Repository.Core.csproj" />
     <ProjectReference Include="..\Service.Mappings\Services.csproj" />
   </ItemGroup>
 
