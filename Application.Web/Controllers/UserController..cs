@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Application.Web.Base;
 using Domain.Common;
 using Domain.Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using NHibernate;
@@ -16,6 +17,7 @@ using Services.Infrastructure;
 namespace Application.Web.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize()]
     public class UserController : Controller
     {
         public UserController() {
@@ -24,11 +26,11 @@ namespace Application.Web.Controllers
 
         }
         // GET api/values
-        [HttpPost]
-        public JsonResult login([FromBody]Login usr)
+        [HttpGet]
+        public JsonResult usuarios([FromBody]Login usr)
         {
             //var obj =  usuarioRepo.Get(1);
-           var dados =  Usuario.Repository.ToList();
+           var dados =  new UsuarioRepository().ToList();
            
             return new JsonResult(dados);
 

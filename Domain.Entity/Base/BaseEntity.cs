@@ -1,12 +1,13 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Domain.Base
 {
-    public abstract class BaseEntity<TRepository> where TRepository : class, new()
+    public abstract class BaseEntity<TRepository>
     {
-        public static TRepository Repository { get { return new TRepository(); } }
+        //public static RepositoryBase Repository { get { return new RepositoryBase(); } }
         public BaseEntity()
         {
            

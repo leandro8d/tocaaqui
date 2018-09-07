@@ -20,3 +20,5 @@ C:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Application
 C:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Application.Web\bin\Debug\netcoreapp2.0\Repository.Core.pdb
 C:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Application.Web\bin\Debug\netcoreapp2.0\Repository.dll
 C:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Application.Web\bin\Debug\netcoreapp2.0\Repository.pdb
+C:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Application.Web\bin\Debug\netcoreapp2.0\Repository.Especification.dll
+C:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Application.Web\bin\Debug\netcoreapp2.0\Repository.Especification.pdb

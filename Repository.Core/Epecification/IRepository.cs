@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Repository.Epecification
 {
-    interface IRepository
+    public interface IRepository<TEntity>
     {
             void Save(object obj);
             void Delete(object obj);
             object GetById(Type objType, object objId);
-            IQueryable<TEntity> ToList<TEntity>();
+            IQueryable<TEntity> ToList();
         
     }
 }

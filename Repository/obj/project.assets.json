@@ -801,6 +801,31 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "Domain.Common": "1.0.0",
+          "Repository.Especification": "1.0.0",
+          "Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
+      "Domain.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Domain.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.Common.dll": {}
+        }
+      },
       "Repository.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
@@ -813,6 +838,16 @@
         },
         "runtime": {
           "bin/placeholder/Repository.Core.dll": {}
+        }
+      },
+      "Repository.Especification/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Repository.Especification.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repository.Especification.dll": {}
         }
       },
       "Services/1.0.0": {
@@ -3235,10 +3270,25 @@
         "version.txt"
       ]
     },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain.Entity/Domain.csproj",
+      "msbuildProject": "../Domain.Entity/Domain.csproj"
+    },
+    "Domain.Common/1.0.0": {
+      "type": "project",
+      "path": "../Domain.Common/Domain.Common.csproj",
+      "msbuildProject": "../Domain.Common/Domain.Common.csproj"
+    },
     "Repository.Core/1.0.0": {
       "type": "project",
       "path": "../Repository.Core/Repository.Core.csproj",
       "msbuildProject": "../Repository.Core/Repository.Core.csproj"
+    },
+    "Repository.Especification/1.0.0": {
+      "type": "project",
+      "path": "../Repository.Especification/Repository.Especification.csproj",
+      "msbuildProject": "../Repository.Especification/Repository.Especification.csproj"
     },
     "Services/1.0.0": {
       "type": "project",
@@ -3248,8 +3298,10 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "Domain >= 1.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
-      "Repository.Core >= 1.0.0"
+      "Repository.Core >= 1.0.0",
+      "Repository.Especification >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3282,8 +3334,14 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
+            "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Domain.Entity\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Domain.Entity\\Domain.csproj"
+            },
             "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Repository.Core\\Repository.Core.csproj": {
               "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Repository.Core\\Repository.Core.csproj"
+            },
+            "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Repository.Especification\\Repository.Especification.csproj": {
+              "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Repository.Especification\\Repository.Especification.csproj"
             }
           }
         }

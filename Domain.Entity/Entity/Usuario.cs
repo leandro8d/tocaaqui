@@ -1,12 +1,13 @@
 ﻿using Domain.Base;
 using Domain.Common;
 using Repository;
+using Repository.Especification;
 using System;
 using System.Collections.Generic;
 
 namespace Domain.Entity
 {
-    public class Usuario: BaseEntity<UsuarioRepository<Usuario>>
+    public class Usuario: BaseBusiness<Usuario>
     {
         public virtual System.Int64 IdUsuario { get; set; }
         public virtual System.String Nome { get; set; }

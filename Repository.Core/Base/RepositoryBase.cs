@@ -9,7 +9,7 @@ using NHibernate.Linq;
 
 namespace Repository.Base
 {
-    public class RepositoryBase: IRepository, IDisposable
+    public class RepositoryBase<TEntity> : IRepository<TEntity>, IDisposable
     {
         protected ISession _session = null;
         protected ITransaction _transaction = null;
@@ -64,7 +64,7 @@ namespace Repository.Base
         {
             return _session.Load(objType, objId);
         }
-        public virtual IQueryable<TEntity> ToList<TEntity>()
+        public virtual IQueryable<TEntity> ToList()
         {
             return (from entity in _session.Query<TEntity>() select entity);
         }

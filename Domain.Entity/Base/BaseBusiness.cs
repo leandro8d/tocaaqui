@@ -4,21 +4,22 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Repository
+namespace Domain.Entity
 {
-    public abstract class BaseBusiness<TEntity> where TEntity : class, new()
+    public abstract class BaseBusiness<TEntity> where TEntity : class
     {
-        protected BaseBusiness()
+       // protected ISession session { get { return DataBase.OpenSession(); } }
+        public BaseBusiness()
         {
         }
-        public TEntity Load(object pk)
+        public virtual TEntity Load(object pk)
         {
             using (ISession session = DataBase.OpenSession())
             {
                 return (TEntity)session.Load(typeof(TEntity), pk);
             }
         }
-        public void Delete(object pk)
+        public virtual void Delete(object pk)
         {
             using (ISession session = DataBase.OpenSession())
             {
@@ -29,7 +30,7 @@ namespace Domain.Repository
                 }
             }
         }
-        public void Save(object obj)
+        public virtual void Save(object obj)
         {
             using (ISession session = DataBase.OpenSession())
             {
@@ -40,7 +41,7 @@ namespace Domain.Repository
                 }
             }
         }
-        public List<TEntity> ToList()
+        public virtual List<TEntity> ToList()
         {
             List<TEntity> resultList = new List<TEntity>();
             using (ISession session = DataBase.OpenSession())

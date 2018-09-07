@@ -1,11 +1,35 @@
 page-login {
     
-.vertical-middle
-{
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    height: 100%;
-    vertical-align: middle;
-}
+    .vertical-middle
+    {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        height: 100%;
+        vertical-align: middle;
+    }
+    .opacity-button {
+        opacity: 0.9;
+    }
+    
+    .opacity-background {
+        opacity: 0.7;
+    }
+    
+    .input-color {
+        background-color: rgb(230, 242, 255);
+        opacity: 0.6;
+        border-radius: 1px;
+    }
+    
+    
+    .background-transparent{
+        background-color:#393339!important;
+        color: white;
+    }
+    
+    .rounded{
+        border-radius: 5px;
+    }
+    
 }
