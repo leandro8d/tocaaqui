@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json.Serialization;
 using Repository;
 using Services.Infrastructure;
 
@@ -23,7 +24,7 @@ namespace Application.Web
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            
+
         }
 
         public IConfiguration Configuration { get; }
@@ -32,7 +33,7 @@ namespace Application.Web
         public void ConfigureServices(IServiceCollection services)
         {
             DataBase.OpenSession();
-           
+
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
         {
             builder.AllowAnyOrigin()
@@ -40,11 +41,12 @@ namespace Application.Web
                    .AllowAnyHeader();
         }));
 
-            services.AddMvc() .AddJsonOptions(
-            options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-        );
+            services.AddMvc()
+                .AddJsonOptions(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
+                .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
             IdentityModelEventSource.ShowPII = true;
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,
@@ -54,7 +56,7 @@ namespace Application.Web
                     ValidIssuer = "tocaaqui.webservice",
                     ValidAudience = "tocaaqui.webservice",
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["SecurityKey"]))
-                    
+
                 };
 
                 options.Events = new JwtBearerEvents
@@ -68,7 +70,7 @@ namespace Application.Web
                     {
                         Console.WriteLine("Token Válido!");
                         return Task.CompletedTask;
-                    }
+                    },
                 };
             });
         }
@@ -82,6 +84,7 @@ namespace Application.Web
             }
             app.UseCors("MyPolicy");
             app.UseMvc();
+
             app.UseAuthentication();
         }
     }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.DTO;
 using Domain.Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -52,19 +53,22 @@ namespace Application.Web.Controllers
                             claims: claims,
                             expires: DateTime.Now.AddMinutes(30),
                             signingCredentials: creds);
-                        
+
+                        var dto = new LoginDTO();
+                        dto.IdLogin = eLogin.IdLogin;
+                        dto.Usuario = eLogin.Usuario;
+                        dto._Login = eLogin._Login;
+                        dto.Token = new JwtSecurityTokenHandler().WriteToken(token);
 
 
-                        return Ok(new
-                        {
-                            token = new JwtSecurityTokenHandler().WriteToken(token)
-                        });
+                        return Ok(dto
+                        );
 
                     }
                     return BadRequest("Credenciais Inválidas..");
                 }
                 return BadRequest("Falha o usuário inserido..");
-            } 
+            }
             catch (Exception ex) { throw ex; }
         }
     }
