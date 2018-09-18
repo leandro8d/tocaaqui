@@ -20,6 +20,7 @@ export class MyApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
+    localStorage.removeItem('token');
 
     // used for an example of ngFor and navigation
     this.pages = [
