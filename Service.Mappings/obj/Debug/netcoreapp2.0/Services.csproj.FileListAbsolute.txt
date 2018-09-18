@@ -10,3 +10,9 @@ c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Service.Map
 c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Service.Mappings\obj\Debug\netcoreapp2.0\Services.dll
 c:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Service.Mappings\obj\Debug\netcoreapp2.0\Services.pdb
 C:\Users\Leandro\Documents\Visual Studio 2017\Projects\TCC-Toca-Aqui\Service.Mappings\obj\Debug\netcoreapp2.0\Services.csprojAssemblyReference.cache
+C:\Users\peque\Source\Repos\tocaaqui\Service.Mappings\obj\Debug\netcoreapp2.0\Services.csprojAssemblyReference.cache
+C:\Users\peque\Source\Repos\tocaaqui\Service.Mappings\obj\Debug\netcoreapp2.0\Services.csproj.CoreCompileInputs.cache
+C:\Users\peque\Source\Repos\tocaaqui\Service.Mappings\obj\Debug\netcoreapp2.0\Services.AssemblyInfoInputs.cache
+C:\Users\peque\Source\Repos\tocaaqui\Service.Mappings\obj\Debug\netcoreapp2.0\Services.AssemblyInfo.cs
+C:\Users\peque\Source\Repos\tocaaqui\Service.Mappings\obj\Debug\netcoreapp2.0\Services.dll
+C:\Users\peque\Source\Repos\tocaaqui\Service.Mappings\obj\Debug\netcoreapp2.0\Services.pdb

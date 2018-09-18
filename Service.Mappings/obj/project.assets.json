@@ -3216,23 +3216,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Leandro\\.nuget\\packages\\": {},
+    "C:\\Users\\peque\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Service.Mappings\\Services.csproj",
+      "projectUniqueName": "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Service.Mappings\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Service.Mappings\\Services.csproj",
-      "packagesPath": "C:\\Users\\Leandro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Service.Mappings\\obj\\",
+      "projectPath": "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Service.Mappings\\Services.csproj",
+      "packagesPath": "C:\\Users\\peque\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Service.Mappings\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Leandro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\peque\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -7,6 +7,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { BandasPage } from '../pages/bandas/bandas';
 import { LoginPage } from '../pages/login/login';
+import { CadastraUsuarioPage } from '../pages/cadastra-usuario/cadastra-usuario';
+import { CadastraAgenciadorPage } from '../pages/cadastra-agenciador/cadastra-agenciador';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -14,7 +17,7 @@ import { LoginPage } from '../pages/login/login';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = CadastraAgenciadorPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -25,6 +28,8 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Minhas Bandas', component: BandasPage },
+      { title: 'Cadastro de Usuários', component: CadastraUsuarioPage},
+      { title: 'Cadastro de Agenciador', component: CadastraAgenciadorPage}
     ];
 
   }

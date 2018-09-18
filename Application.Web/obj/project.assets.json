@@ -5188,8 +5188,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
+          "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Repository.Especification\\Repository.Especification.csproj": "1.0.0",
           "Domain.Common": "1.0.0",
-          "Repository.Especification": "1.0.0",
           "Services": "1.0.0"
         },
         "compile": {
@@ -5226,9 +5226,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
+          "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Repository.Especification\\Repository.Especification.csproj": "1.0.0",
           "Domain": "1.0.0",
-          "Repository.Core": "1.0.0",
-          "Repository.Especification": "1.0.0"
+          "Repository.Core": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Repository.dll": {}
@@ -5249,16 +5249,6 @@
         },
         "runtime": {
           "bin/placeholder/Repository.Core.dll": {}
-        }
-      },
-      "Repository.Especification/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Repository.Especification.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Repository.Especification.dll": {}
         }
       },
       "Services/1.0.0": {
@@ -7319,7 +7309,7 @@
       ]
     },
     "Microsoft.Extensions.PlatformAbstractions/1.1.0": {
-      "sha512": "H6ZsQzxYw/6k2DfEQRXdC+vQ6obd6Uba3uGJrnJ2vG4PRXjQZ7seB13JdCfE72abp8E6Fk3gGgDzfJiLZi5ZpQ==",
+      "sha512": "UMlN++q5qqzQ2HH+uOrKxN5fmBXMQDhrYkSaPJxhmyzfJaFPirrVr1raim/Ocq1psAZoB9+7JSAf0GDAX35wUg==",
       "type": "package",
       "path": "microsoft.extensions.platformabstractions/1.1.0",
       "files": [
@@ -12565,7 +12555,7 @@
       ]
     },
     "System.Security.Cryptography.Xml/4.4.2": {
-      "sha512": "q9Dren/YP5jhRCkDvLfuaPpMTQzP97ANvzq/OoGgwK8YdLRSTABS9oW5/23OKoM2DRCuBrh4qaecD2YNhPtuzQ==",
+      "sha512": "1m+fKVrApgKYMRuE0MF0vGjqy4XqAp1rCtyAzMXhJajMDDytMh/rHk9hp4M7KKk3QQZoWJUvyUY7xcw74w+JiQ==",
       "type": "package",
       "path": "system.security.cryptography.xml/4.4.2",
       "files": [
@@ -13836,11 +13826,6 @@
       "path": "../Repository.Core/Repository.Core.csproj",
       "msbuildProject": "../Repository.Core/Repository.Core.csproj"
     },
-    "Repository.Especification/1.0.0": {
-      "type": "project",
-      "path": "../Repository.Especification/Repository.Especification.csproj",
-      "msbuildProject": "../Repository.Especification/Repository.Especification.csproj"
-    },
     "Services/1.0.0": {
       "type": "project",
       "path": "../Service.Mappings/Services.csproj",
@@ -13863,23 +13848,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Leandro\\.nuget\\packages\\": {},
+    "C:\\Users\\peque\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Application.Web\\Application.Web.csproj",
+      "projectUniqueName": "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Application.Web\\Application.Web.csproj",
       "projectName": "Application.Web",
-      "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Application.Web\\Application.Web.csproj",
-      "packagesPath": "C:\\Users\\Leandro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Application.Web\\obj\\",
+      "projectPath": "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Application.Web\\Application.Web.csproj",
+      "packagesPath": "C:\\Users\\peque\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Application.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Leandro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\peque\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13892,20 +13877,20 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Domain.DTO\\Domain.DTO.csproj": {
-              "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Domain.DTO\\Domain.DTO.csproj"
+            "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Domain.DTO\\Domain.DTO.csproj": {
+              "projectPath": "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Domain.DTO\\Domain.DTO.csproj"
             },
-            "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Domain.Entity\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Domain.Entity\\Domain.csproj"
+            "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Domain.Entity\\Domain.csproj": {
+              "projectPath": "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Domain.Entity\\Domain.csproj"
             },
-            "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Repository.Core\\Repository.Core.csproj": {
-              "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Repository.Core\\Repository.Core.csproj"
+            "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Repository.Core\\Repository.Core.csproj": {
+              "projectPath": "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Repository.Core\\Repository.Core.csproj"
             },
-            "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Repository\\Repository.csproj"
+            "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Repository\\Repository.csproj"
             },
-            "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Service.Mappings\\Services.csproj": {
-              "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Service.Mappings\\Services.csproj"
+            "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Service.Mappings\\Services.csproj": {
+              "projectPath": "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Service.Mappings\\Services.csproj"
             }
           }
         }
@@ -13952,5 +13937,16 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Não é possível encontrar o projeto 'C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Repository.Especification\\Repository.Especification.csproj'. Verifique se a referência do projeto é válida e se o arquivo de projeto existe.",
+      "libraryId": "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Repository.Especification\\Repository.Especification.csproj",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    }
+  ]
 }

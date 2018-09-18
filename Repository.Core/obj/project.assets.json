@@ -3235,23 +3235,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Leandro\\.nuget\\packages\\": {},
+    "C:\\Users\\peque\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Repository.Core\\Repository.Core.csproj",
+      "projectUniqueName": "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Repository.Core\\Repository.Core.csproj",
       "projectName": "Repository.Core",
-      "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Repository.Core\\Repository.Core.csproj",
-      "packagesPath": "C:\\Users\\Leandro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Repository.Core\\obj\\",
+      "projectPath": "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Repository.Core\\Repository.Core.csproj",
+      "packagesPath": "C:\\Users\\peque\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Repository.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Leandro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\peque\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3264,8 +3264,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Service.Mappings\\Services.csproj": {
-              "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Service.Mappings\\Services.csproj"
+            "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Service.Mappings\\Services.csproj": {
+              "projectPath": "C:\\Users\\peque\\Source\\Repos\\tocaaqui\\Service.Mappings\\Services.csproj"
             }
           }
         }
