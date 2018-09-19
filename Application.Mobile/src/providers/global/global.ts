@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { HttpClient,HttpResponse,HttpRequest, HttpHeaders} from '@angular/common/http';
+import {UserProvider} from '../user/user'
 /*
 Generated class for the GlobalProvider provider.
 
@@ -10,17 +10,28 @@ and Angular DI.
 @Injectable()
 export class GlobalProvider {
   
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient,public user: UserProvider) {
     console.log('Hello GlobalProvider Provider');
   }
   
   globalUrl = "http://localhost:5000/api";
   
   get = function (url,params,options){
-    return this.http.get(this.globalUrl+url, params,);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+
+    return this.http.get(this.globalUrl+url,httpOptions);
   }
   post = function (url,params,options){
-    return this.http.post(this.globalUrl+url, params,);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    return this.http.post(this.globalUrl+url, params,httpOptions);
   }
   
 }

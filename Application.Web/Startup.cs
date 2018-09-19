@@ -83,9 +83,9 @@ namespace Application.Web
                 app.UseDeveloperExceptionPage();
             }
             app.UseCors("MyPolicy");
-            app.UseMvc();
-
             app.UseAuthentication();
+            
+            app.UseMvc();
         }
     }
 }
