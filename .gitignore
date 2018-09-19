@@ -31,3 +31,4 @@
 /Repository.Especification/obj/*.targets
 /Repository/bin/Debug/netcoreapp2.0/*.dll
 /Repository/bin/Debug/netcoreapp2.0/*.pdb
+./vs
