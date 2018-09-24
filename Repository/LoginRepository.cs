@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Repository
 {
-    public class LoginRepository : RepositoryBase<Login>, ILoginRepository<Login>
+    public class LoginRepository : RepositoryBase<Login>
     {
         public Login GetByLogin(string login)
         {

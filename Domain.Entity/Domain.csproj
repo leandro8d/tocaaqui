@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domain.Common\Domain.Common.csproj" />
-    <ProjectReference Include="..\Repository.Especification\Repository.Especification.csproj" />
     <ProjectReference Include="..\Service.Mappings\Services.csproj" />
   </ItemGroup>
 

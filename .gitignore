@@ -32,3 +32,9 @@
 /Repository/bin/Debug/netcoreapp2.0/*.dll
 /Repository/bin/Debug/netcoreapp2.0/*.pdb
 ./vs
+*.dll
+*.cache
+node_modules/
+
+/Application.Mobile/node_modules
+node_modules

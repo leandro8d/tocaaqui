@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpResponse,HttpRequest, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import {UserProvider} from '../user/user'
 /*
 Generated class for the GlobalProvider provider.

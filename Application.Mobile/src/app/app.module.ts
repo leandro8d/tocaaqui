@@ -8,6 +8,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { BandasPage } from '../pages/bandas/bandas';
 import { LoginPage } from '../pages/login/login';
+import { CadastraUsuarioPage } from '../pages/cadastra-usuario/cadastra-usuario';
+import { CadastraAgenciadorPage } from '../pages/cadastra-agenciador/cadastra-agenciador';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,7 +25,10 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     MyApp,
     HomePage,
     BandasPage,
-    LoginPage
+    LoginPage,
+    CadastraUsuarioPage,
+    CadastraAgenciadorPage,
+    
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     MyApp,
     HomePage,
     BandasPage,
-    LoginPage
+    LoginPage,
+    CadastraUsuarioPage,
+    CadastraAgenciadorPage
   ],
   providers: [
     StatusBar,

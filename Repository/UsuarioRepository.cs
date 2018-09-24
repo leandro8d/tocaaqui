@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Repository
 {
-    public class UsuarioRepository :RepositoryBase<Usuario>,IUsuarioRepository<Usuario>
+    public class UsuarioRepository :RepositoryBase<Usuario>
     {
 
 
