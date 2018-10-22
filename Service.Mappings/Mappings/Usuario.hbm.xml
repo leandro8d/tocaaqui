@@ -6,19 +6,20 @@
   <!-- This mapping is created specifically for NH-1059 -->
   <class name="Domain.Entity.Usuario" table="Usuario" >
 
-    <id name="IdUsuario" column="ID_USUARIO" type="int">
+    <id name="IdUsuario" column="ID_USUARIO" type="long" unsaved-value="0">
       	<generator class="increment"/>
     </id>
 
     <property name="Nome" type="string" column="nome" not-null="true" />
+    <property name="Estado" type="string" column="estado" not-null="true" />
+    <property name="Cidade" type="string" column="cidade" not-null="true" />
     <property name="CPF" type="string" column="cpf" length="11" not-null="true" />
     <property name="Email" type="string" column="email" not-null="true" />
     <property name="TipoUsuario" column="id_tipo_usuario" type="Domain.Common.TipoUsuarioEnum, Domain.Common"/>
-    <array name="Bandas" table="banda" inverse="true"   cascade="all">
+    <bag name="Bandas" inverse="true"   cascade="all">
       <key column="id_responsavel"/>
-      <index column="id_banda"/>
       <one-to-many class="Banda" />
-    </array>
+    </bag>
     
     <array name="Estabelecimentos" table="estabelecimento" inverse="true"  cascade="all">
       <key column="id_responsavel"/>

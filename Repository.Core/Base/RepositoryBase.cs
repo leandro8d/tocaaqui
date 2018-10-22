@@ -52,17 +52,21 @@ namespace Repository.Base
         }
         #endregion
         #region IRepository Members
-        public virtual void Save(object obj)
+        public virtual void Save(TEntity obj)
         {
             _session.SaveOrUpdate(obj);
+            this.BeginTransaction();
         }
-        public virtual void Delete(object obj)
+        public virtual void Delete(TEntity obj)
         {
             _session.Delete(obj);
+            this.BeginTransaction();
         }
-        public virtual object GetById(Type objType, object objId)
+        public virtual object GetById(int objId)
         {
-            return _session.Load(objType, objId);
+            this.BeginTransaction();
+            return _session.Load(typeof(TEntity), objId);
+            
         }
         public virtual IQueryable<TEntity> ToList()
         {

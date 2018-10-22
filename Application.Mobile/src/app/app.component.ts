@@ -8,7 +8,8 @@ import { HomePage } from '../pages/home/home';
 import { BandasPage } from '../pages/bandas/bandas';
 import { LoginPage } from '../pages/login/login';
 import { CadastraUsuarioPage } from '../pages/cadastra-usuario/cadastra-usuario';
-import { CadastraAgenciadorPage } from '../pages/cadastra-agenciador/cadastra-agenciador';
+import { CadastraBandaPage } from '../pages/cadastra-banda/cadastra-banda';
+import { PortifolioPage } from '../pages/portifolio/portifolio';
 
 
 @Component({
@@ -17,7 +18,7 @@ import { CadastraAgenciadorPage } from '../pages/cadastra-agenciador/cadastra-ag
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = CadastraUsuarioPage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -30,7 +31,7 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Minhas Bandas', component: BandasPage },
       { title: 'Cadastro de Usuários', component: CadastraUsuarioPage},
-      { title: 'Cadastro de Agenciador', component: CadastraAgenciadorPage}
+      { title: 'Cadastro de Banda', component: CadastraBandaPage}
     ];
 
   }

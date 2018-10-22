@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Domain.Entity
 {
-    public class Login
+    public class Login: BaseBusiness<Login>
     {
         public virtual System.Int64 IdLogin { get; set; }
         public virtual Usuario Usuario { get; set; }

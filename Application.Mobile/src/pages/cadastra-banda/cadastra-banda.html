@@ -1,0 +1,62 @@
+<!--
+  Generated template for the CadastraBandaPage page.
+  
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+  <ion-navbar>
+    <ion-title>cadastra-banda</ion-title>
+  </ion-navbar>
+  
+</ion-header>
+
+
+<ion-content padding>
+  <form #formbanda="ngForm">
+      <ion-item>
+          <ion-label fixed>Avatar</ion-label>
+          <ion-avatar item-end>
+            <img [src]="'Data:image/jpeg;base64,'+banda.Foto" (click)="getPhoto()">
+          </ion-avatar>
+        </ion-item>
+    <ion-item>
+      <ion-input type="text" name="nome" [(ngModel)]="banda.Nome" placeholder="Nome" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Estado</ion-label>
+      <ion-select name="estados" [(ngModel)]="banda.Estado"  (ionChange)="onSelectEstado($event)" required>
+        <ion-option  [value]="estado.id"  *ngFor="let estado of estados" >{{estado.estado}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Cidade</ion-label>
+      <ion-select name="cidade" [(ngModel)]="banda.Cidade" required>
+        <ion-option  [value]="cidade.cidade"  *ngFor="let cidade of cidades" >{{cidade.cidade}}</ion-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Estilo Musical</ion-label>
+      <ion-select [(ngModel)]="selectedEstilo"  name="tipousuario" required col-8>
+        <ion-option [value]="estilo" *ngFor="let estilo of estilosMusicais" >{{estilo.Descricao}}</ion-option>
+      </ion-select>        
+      <button item-right ion-button (click)="addEstilo(selectedEstilo)" ><ion-icon name="add"></ion-icon></button>
+    </ion-item>
+    
+    <ion-list col-4>
+      
+      <ion-item *ngFor="let estilo of banda.EstilosMusicais">
+        <h2>{{estilo.Descricao}}</h2>
+      </ion-item>
+      
+    </ion-list>
+    
+    <br>
+    <div text-right>
+      <button ion-button block name="btn-criar" [disabled]="!formbanda.form.valid" (click)="criarBanda(banda)">Cadastrar</button>
+    </div>
+  </form>
+  
+</ion-content>

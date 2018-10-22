@@ -811,16 +811,6 @@
           "bin/placeholder/Domain.Common.dll": {}
         }
       },
-      "Repository.Especification/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Repository.Especification.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Repository.Especification.dll": {}
-        }
-      },
       "Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
@@ -3246,11 +3236,6 @@
       "path": "../Domain.Common/Domain.Common.csproj",
       "msbuildProject": "../Domain.Common/Domain.Common.csproj"
     },
-    "Repository.Especification/1.0.0": {
-      "type": "project",
-      "path": "../Repository.Especification/Repository.Especification.csproj",
-      "msbuildProject": "../Repository.Especification/Repository.Especification.csproj"
-    },
     "Services/1.0.0": {
       "type": "project",
       "path": "../Service.Mappings/Services.csproj",
@@ -3261,7 +3246,6 @@
     ".NETCoreApp,Version=v2.0": [
       "Domain.Common >= 1.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
-      "Repository.Especification >= 1.0.0",
       "Services >= 1.0.0"
     ]
   },
@@ -3297,9 +3281,6 @@
           "projectReferences": {
             "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Domain.Common\\Domain.Common.csproj": {
               "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Domain.Common\\Domain.Common.csproj"
-            },
-            "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Repository.Especification\\Repository.Especification.csproj": {
-              "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Repository.Especification\\Repository.Especification.csproj"
             },
             "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Service.Mappings\\Services.csproj": {
               "projectPath": "C:\\Users\\Leandro\\Documents\\Visual Studio 2017\\Projects\\TCC-Toca-Aqui\\Service.Mappings\\Services.csproj"

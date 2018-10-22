@@ -8,18 +8,18 @@ namespace Domain.Entity
 {
     public abstract class BaseBusiness<TEntity> where TEntity : class
     {
-       // protected ISession session { get { return DataBase.OpenSession(); } }
+        // protected ISession session { get { return DataBase.OpenSession(); } }
         public BaseBusiness()
         {
         }
-        public virtual TEntity Load(object pk)
+        public static TEntity Load(object pk)
         {
             using (ISession session = DataBase.OpenSession())
             {
                 return (TEntity)session.Load(typeof(TEntity), pk);
             }
         }
-        public virtual void Delete(object pk)
+        public static void Delete(TEntity pk)
         {
             using (ISession session = DataBase.OpenSession())
             {
@@ -30,18 +30,26 @@ namespace Domain.Entity
                 }
             }
         }
-        public virtual void Save(object obj)
+        public static void Save(TEntity obj)
         {
-            using (ISession session = DataBase.OpenSession())
+            try
             {
-                using (ITransaction transaction = session.BeginTransaction())
+                using (ISession session = DataBase.OpenSession())
                 {
+                    var transaction = session.Transaction;
+
                     session.SaveOrUpdate(obj);
+                    transaction.Begin();
                     transaction.Commit();
                 }
             }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                throw ex;
+            }
         }
-        public virtual List<TEntity> ToList()
+        public static List<TEntity> ToList()
         {
             List<TEntity> resultList = new List<TEntity>();
             using (ISession session = DataBase.OpenSession())

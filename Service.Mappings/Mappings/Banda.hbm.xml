@@ -4,24 +4,33 @@
 				   assembly="Domain"
 >
   <!-- This mapping is created specifically for NH-1059 -->
-  <class name="Domain.Entity.Banda" table="Banda" lazy="true">
+  <class name="Domain.Entity.Banda" table="Banda" lazy="false">
 
-    <id name="IdBanda" column="ID_BANDA" type="int">
+    <id name="IdBanda" column="ID_BANDA" type="long" unsaved-value="0">
       	<generator class="increment"/>
     </id>
 
     <property name="Nome" type="string" column="nome" not-null="true" />
-    <property name="Origem" type="string" column="origem" length="11" not-null="true" />
-    <many-to-one name="Responsavel" column="id_responsavel" class="Usuario"/>
+    <property name="Estado" type="string" column="estado" not-null="true" />
+    <property name="Cidade" type="string" column="cidade" not-null="true" />
+    <property name="Excluida" type="boolean" column="excluida" not-null="true" />
+    <one-to-one name="Foto" class="FotoBanda" lazy="false" />
+    <many-to-one name="Responsavel" column="id_responsavel" lazy="false" class="Usuario"/>
+    <many-to-one name="Portifolio" fetch="join" class="Portifolio" lazy="false" />
     
 
+    <bag name="EstilosMusicais" table="banda_estilo_musical" lazy="false">
+        <key column="id_banda"/>
+        <many-to-many class="EstiloMusical" column="id_estilo_musical"/>
+    </bag>
     <!--
 		The issue arise when there is not already a <join> element
 		in the root class.  If the <join> element below is uncommented,
 		everything is fine.
 		-->
     
-
+
+
     <!--
 		<join table="junk">
 			<key column="worker_id"/>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   namespace="Domain.Entity"
+				   assembly="Domain"
+>
+  <!-- This mapping is created specifically for NH-1059 -->
+  <class name="Domain.Entity.Portifolio" table="portifolio" >
+
+    <id name="IdPortifolio" column="ID_PORTIFOLIO" type="long" unsaved-value="0">
+      	<generator class="increment"/>
+    </id>
+
+    <property name="IdBanda" type="long" column="id_banda" not-null="true" />
+    <property name="Descricao" type="string" column="descricao" not-null="true" />
+    <one-to-one name="Banda" class="Banda"/>
+
+    
+
+    <bag name="Fotos" table="foto_portifolio" lazy="true">
+        <key column="id_portifolio"/>
+        <many-to-many class="FotoPortifolio" column="id_foto"/>
+    </bag>
+    <!--
+		The issue arise when there is not already a <join> element
+		in the root class.  If the <join> element below is uncommented,
+		everything is fine.
+		-->
+    
+
+
+    <!--
+		<join table="junk">
+			<key column="worker_id"/>
+			<property name="Junk"/>
+		</join>
+		-->
+
+    <!--<subclass name="PaidWorker"
+				  discriminator-value="P"
+				  lazy="true">
+      
+      <join table="PaidWorker" fetch="join">
+        <key column="worker_id"/>
+        <property name="Wage"/>
+      </join>
+    </subclass>-->
+  </class>
+</hibernate-mapping>

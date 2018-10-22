@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { UserProvider } from '../../providers/user/user';
-import { HomePage } from '../home/home';
+import { SessionProvider } from '../../providers/session/session';
+import { CadastraUsuarioPage } from '../cadastra-usuario/cadastra-usuario';
 import {GlobalProvider} from '../../providers/global/global'
-
+import { StatusBar } from '@ionic-native/status-bar';
 
 
 /**
@@ -19,34 +19,23 @@ import {GlobalProvider} from '../../providers/global/global'
 })
 export class LoginPage {
   
-  constructor(public navCtrl: NavController, public navParams: NavParams,userProvider: UserProvider,public global:GlobalProvider) {
-    this.userprovider = userProvider;
-    this.homePage = HomePage;
-  }
-  userprovider;
-  homePage;
-  user = {_Login:undefined,Password:undefined};
-  login = function(userData){ 
-    this.userprovider.Login(userData);
-    // .subscribe(
-    //   res => {
-    //     this.navCtrl.push(this.homePage);
-    //   },
-    //   err => {
-    //     console.log("Error occured");
-    //   }
-    // ); 
-
-   
-    // this.global.get('/User').subscribe(res => 
-    //   console.log(res)
-    // )
+  constructor(public navCtrl: NavController, public navParams: NavParams,public sessionProvider: SessionProvider,public global:GlobalProvider, public bar:StatusBar) {
     
+  }
+ 
+  user = {_Login:undefined,Password:undefined};
 
+    logar(userData){ 
+    this.sessionProvider.Login(userData);
+  }
+
+  criarUsuario(){
+    this.navCtrl.push(CadastraUsuarioPage);
   }
   
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  this.bar.show();   
  
   }
   

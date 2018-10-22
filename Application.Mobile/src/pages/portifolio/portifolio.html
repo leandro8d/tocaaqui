@@ -1,0 +1,33 @@
+<ion-content padding>
+  <form #formbanda="ngForm">
+    
+      <ion-item *ngIf="portifolio.Fotos.length < 5"  item-end>
+        <ion-avatar (click)="getPhoto()">
+          <img src="../../assets/imgs/61050.png" />
+        </ion-avatar>
+      </ion-item>
+      <ion-item *ngFor="let foto of portifolio.Fotos">
+          <ion-avatar>
+            <img [src]="'Data:image/jpeg;base64,'+foto" />
+          </ion-avatar>
+        </ion-item>
+
+    <ion-item>
+      <ion-label id="profile_image" color="primary" stacked>Profilbild wählen</ion-label>
+      <ion-input type="file" (change)="changeListener($event)"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" name="Descricao" [(ngModel)]="portifolio.Descricao" placeholder="descrição" required></ion-input>
+    </ion-item>
+    
+    
+    
+    
+    
+    <br>
+    <div text-right>
+      <button ion-button block  [disabled]="!formbanda.form.valid" (click)="criarPortifolio(portifolio)">Cadastrar</button>
+    </div>
+  </form>
+  
+</ion-content>

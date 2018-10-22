@@ -8,16 +8,61 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+  <ion-card>
+
+    <ion-card-header>
+     Minhas Bandas
+    </ion-card-header>
+  
+    <ion-card-content>
+   
+
+      <ion-card *ngFor="let banda of bandasUsuario">
+        <img [src]="'Data:image/jpeg;base64,'+banda.FotoBanda.Foto" width="600" height="390" />
+       
+    
+        <ion-card-content>
+          <ion-card-title >
+            {{banda.Nome}}
+          </ion-card-title>
+          <p *ngIf="banda.Portifolio">
+            {{banda.Portifolio.Descricao}}
+          </p>
+         <h6 *ngFor="let estilo of banda.EstilosMusicais">{{estilo.Descricao}}</h6>
+
+        </ion-card-content>
+    
+        <ion-row no-padding>
+          <ion-col>
+            <button ion-button clear small color="danger" icon-start>
+              <ion-icon name='star'></ion-icon>
+              Perfil
+            </button>
+          </ion-col>
+          <ion-col text-center>
+            <button ion-button clear small color="danger" icon-start *ngIf="!banda.Portifolio" (click)="criarPortifolio(banda)">
+              <ion-icon name='musical-notes'></ion-icon>
+              <b>Criar Portifolio</b>
+              <b *ngIf="banda.Portifolio">Criar Portifolio</b>
+            </button>
+            <button ion-button clear small color="danger" icon-start *ngIf="banda.Portifolio" (click)="editarPortifolio(banda)">
+              <ion-icon name='musical-notes'></ion-icon>
+              <b>Editar Portifolio</b>
+            </button>
+          </ion-col>
+          <ion-col text-right>
+            <button ion-button clear small color="danger" (click)="editarBanda(banda)" icon-start>
+              <ion-icon name='share-alt'></ion-icon>
+              Editar Banda
+            </button>
+          </ion-col>
+        </ion-row>
+    
+      </ion-card>
+    
+
+
+    </ion-card-content>
+  
+  </ion-card>
 </ion-content>

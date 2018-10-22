@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {UsuarioProvider} from '../../providers/usuario/usuario'
+import {GlobalProvider} from '../../providers/global/global'
+import {LoginPage} from '../login/login'
 /**
  * Generated class for the CadastraUsuarioPage page.
  *
@@ -8,18 +10,37 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-cadastra-usuario',
   templateUrl: 'cadastra-usuario.html',
 })
 export class CadastraUsuarioPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public provider: UsuarioProvider,public global:GlobalProvider) {
   }
 
+
+
+  public login:any = {Usuario:{}};
+  public tipos:any;
+
+  banda:any = {};
+  estados;
+  cidades;
+ 
+public onSelectEstado(){
+ this.global.getCidadesEstados(this.login.Usuario.Estado).subscribe(data=>{
+   this.cidades = data
+ }, error => this.global.showToast(error.error));
+}
+  public criarUsuario(usr:Object){
+    this.global.showLoader();
+    this.provider.CriarUsuario(usr).subscribe(data=>{ this.global.dismissLoader(); this.global.showToast(data); this.navCtrl.push(LoginPage);console.log(data)}, error => {this.global.showToast(error.error);this.global.dismissLoader();});
+  }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastraUsuarioPage');
+    this.global.getEstados().subscribe(data=>{
+      this.estados = data
+    }, error => this.global.showToast(error.error));
   }
 
 }

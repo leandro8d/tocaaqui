@@ -6,13 +6,16 @@
   <!-- This mapping is created specifically for NH-1059 -->
   <class name="Domain.Entity.Estabelecimento" table="Estabelecimento" lazy="true">
 
-    <id name="IdEstabelecimento" column="ID_ESTABELECIMENTO" type="int">
+    <id name="IdEstabelecimento" column="ID_ESTABELECIMENTO" type="long">
       	<generator class="increment"/>
     </id>
 
     <property name="Nome" type="string" column="nome" not-null="true" />
     <property name="Endereco" type="string" column="endereco"  not-null="true" />
     <property name="CEP" type="string" column="CEP" not-null="true" />
+    <property name="Estado" type="string" column="estado" not-null="true" />
+    <property name="Cidade" type="string" column="cidade" not-null="true" />
+    <property name="Excluido" type="boolean" column="excluido" not-null="true" />
     <many-to-one name="Responsavel" column="id_responsavel" class="Usuario"/>
     <array name="Fotos" table="foto_estabelecimento" inverse="true"  cascade="all">
       <key column="id_estabelecimento"/>
@@ -25,7 +28,8 @@
 		everything is fine.
 		-->
     
-
+
+
     <!--
 		<join table="junk">
 			<key column="worker_id"/>

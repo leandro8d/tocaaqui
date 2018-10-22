@@ -4,6 +4,26 @@
    // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
    "version": "0.2.0",
    "configurations": [
+       {
+           "name": "Run android on device",
+           "type": "cordova",
+           "request": "launch",
+           "platform": "android",
+           "target": "device",
+           "sourceMaps": true,
+           "cwd": "${workspaceRoot}/Application.Mobile",
+           "port": 9222,
+           
+       },
+       {
+           "name": "Attach to android on device",
+           "type": "cordova",
+           "request": "attach",
+           "platform": "android",
+           "target": "device",
+           "cwd": "${workspaceRoot}/Application.Mobile",
+           "sourceMaps": true
+       },
         {
             "name": ".NET Core Launch (web)",
             "type": "coreclr",

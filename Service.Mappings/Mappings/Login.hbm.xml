@@ -6,7 +6,7 @@
   <!-- This mapping is created specifically for NH-1059 -->
   <class name="Domain.Entity.Login" table="Login" >
 
-    <id name="IdLogin" column="ID_LOGIN" type="int">
+    <id name="IdLogin" column="ID_LOGIN" type="long" unsaved-value="0">
       	<generator class="increment"/>
     </id>
 
@@ -20,7 +20,8 @@
 		everything is fine.
 		-->
     
-
+
+
     <!--
 		<join table="junk">
 			<key column="worker_id"/>

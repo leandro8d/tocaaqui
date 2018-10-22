@@ -6,7 +6,7 @@
   <!-- This mapping is created specifically for NH-1059 -->
   <class name="Domain.Entity.FotoEstabelecimento" table="foto_estabelecimento" lazy="true">
 
-    <id name="IdFotoEstabelecimento" column="ID_FOTO_ESTABELECIMENTO" type="int">
+    <id name="IdFotoEstabelecimento" column="ID_FOTO_ESTABELECIMENTO" type="long">
       	<generator class="increment"/>
     </id>
     <property name="Foto" type="BinaryBlob" column="Foto" not-null="true" />
@@ -17,7 +17,8 @@
 		everything is fine.
 		-->
     
-
+
+
     <!--
 		<join table="junk">
 			<key column="worker_id"/>

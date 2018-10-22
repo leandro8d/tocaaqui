@@ -7,9 +7,9 @@ namespace Repository.Epecification
 {
     public interface IRepository<TEntity>
     {
-            void Save(object obj);
-            void Delete(object obj);
-            object GetById(Type objType, object objId);
+            void Save(TEntity obj);
+            void Delete(TEntity obj);
+            object GetById(int objId);
             IQueryable<TEntity> ToList();
         
     }

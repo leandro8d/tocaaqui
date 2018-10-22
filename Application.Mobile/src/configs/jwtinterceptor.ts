@@ -9,7 +9,7 @@ import {
     HttpResponse,
     HttpErrorResponse
 } from '@angular/common/http';
-import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
 import {App} from "ionic-angular";
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
@@ -32,7 +32,7 @@ export class JwtInterceptor implements HttpInterceptor {
             if (err instanceof HttpErrorResponse) {
                 if (err.status === 401) {
                     let nav = this.app.getActiveNav();
-                    nav.push(HomePage);
+                    nav.push(LoginPage);
                 }
             }
         });

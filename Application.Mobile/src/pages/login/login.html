@@ -1,6 +1,6 @@
 <ion-content padding id="page2" style="background-color:#262626;" no-bounce>
   <div class="spacer" style="height:40px;" id="login-spacer1"></div>
-  <form id="login-form1">
+  <form  #login="ngForm" >
     <img src="../../assets/imgs/logo.png" style="display:block;width:40%;height:auto;margin-left:auto;margin-right:auto;" />
     <div id="login-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
       <p style="color:#FFFFFF;font-size:27px;">
@@ -11,26 +11,26 @@
       
       <ion-item class="background-transparent">
         <ion-label stacked style="color:white">
-          Email
+          Login
         </ion-label>
-        <ion-input [(ngModel)]="user._Login" name="login" type="email" ></ion-input>
+        <ion-input [(ngModel)]="user._Login" name="login" type="email" required></ion-input>
       </ion-item>
       <ion-item class="background-transparent">
         <ion-label stacked style="color:white">
           Password
         </ion-label>
-        <ion-input  [(ngModel)]="user.Senha" name="senha" type="password" ></ion-input>
+        <ion-input  [(ngModel)]="user.Senha" name="senha" type="password" required></ion-input>
       </ion-item>
       
     </ion-list>
     <div class="spacer" style="height:40px;" id="login-spacer2"></div>
     <div >
-      <button block (click)="login(user)" ion-button color="danger"  class="rounded" style="border-radius:1px 1px 1px 1px;">
+      <button block (click)="logar(user)" [disabled]="!login.valid" ion-button color="danger"   class="rounded" style="border-radius:1px 1px 1px 1px;">
         Log in
       </button>
     </div>
     <div padding>
-      <a>
+      <a (click)="criarUsuario()">
         Ou Crie uma conta
       </a>
     

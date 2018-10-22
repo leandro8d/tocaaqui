@@ -3,22 +3,29 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { ImagePicker } from '@ionic-native/image-picker';
+import { Base64 } from '@ionic-native/base64';
+import { File } from '@ionic-native/file';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { BandasPage } from '../pages/bandas/bandas';
 import { LoginPage } from '../pages/login/login';
 import { CadastraUsuarioPage } from '../pages/cadastra-usuario/cadastra-usuario';
-import { CadastraAgenciadorPage } from '../pages/cadastra-agenciador/cadastra-agenciador';
+import { CadastraBandaPage } from '../pages/cadastra-banda/cadastra-banda';
+import { PortifolioPage } from '../pages/portifolio/portifolio';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { UserProvider } from '../providers/user/user';
+import { SessionProvider } from '../providers/session/session';
 import { GlobalProvider } from '../providers/global/global';
 
 import {TokenInterceptor} from '../configs/interceptor';
 import {JwtInterceptor} from '../configs/jwtinterceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { UsuarioProvider } from '../providers/usuario/usuario';
+import { BandaProvider } from '../providers/banda/banda';
+import { FotoProvider } from '../providers/foto/foto';
 
 @NgModule({
   declarations: [
@@ -27,8 +34,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     BandasPage,
     LoginPage,
     CadastraUsuarioPage,
-    CadastraAgenciadorPage,
-    
+    CadastraBandaPage,
+    PortifolioPage
   ],
   imports: [
     BrowserModule,
@@ -43,13 +50,14 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     BandasPage,
     LoginPage,
     CadastraUsuarioPage,
-    CadastraAgenciadorPage
+    CadastraBandaPage,
+    PortifolioPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserProvider,
+    SessionProvider,
     GlobalProvider,
     {
       provide: HTTP_INTERCEPTORS,
@@ -61,7 +69,12 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
       useClass: JwtInterceptor,
       multi: true
     },
-    
+    UsuarioProvider,
+    BandaProvider,
+    ImagePicker,
+    Base64,
+    File,
+    FotoProvider
   ]
 })
 export class AppModule {}

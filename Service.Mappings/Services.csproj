@@ -7,15 +7,29 @@
   <ItemGroup>
     <None Remove="Mappings\Banda.hbm.xml" />
     <None Remove="Mappings\Estabelecimento.hbm.xml" />
+    <None Remove="Mappings\EstiloMusical.hbm.xml" />
+    <None Remove="Mappings\FotoBanda.hbm.xml" />
     <None Remove="Mappings\FotoEstabelecimento.hbm.xml" />
     <None Remove="Mappings\FotoPerfil.hbm.xml" />
+    <None Remove="Mappings\FotoPortifolio.hbm.xml" />
     <None Remove="Mappings\Login.hbm.xml" />
+    <None Remove="Mappings\Portifolio.hbm.xml" />
     <None Remove="Mappings\Usuario.hbm.xml" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Mappings\FotoPortifolio.hbm.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Portifolio.hbm.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mappings\Estabelecimento.hbm.xml" />
     <EmbeddedResource Include="Mappings\Banda.hbm.xml" />
+    <EmbeddedResource Include="Mappings\EstiloMusical.hbm.xml" />
+    <EmbeddedResource Include="Mappings\FotoBanda.hbm.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mappings\FotoEstabelecimento.hbm.xml" />
     <EmbeddedResource Include="Mappings\FotoPerfil.hbm.xml" />
     <EmbeddedResource Include="Mappings\Login.hbm.xml">

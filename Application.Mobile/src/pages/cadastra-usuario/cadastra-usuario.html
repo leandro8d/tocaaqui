@@ -30,24 +30,50 @@
   </button>
 
   <!-- Formulário Usuário -->
+  <form #formusuario="ngForm">
   <ion-item>
-    <ion-input type="text" placeholder="Nome"></ion-input>
+    <ion-input type="text" name="nome" [(ngModel)]="login.Usuario.Nome" placeholder="Nome" required></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="text" placeholder="Email"></ion-input>
+    <ion-input type="email" name="email" [(ngModel)]="login.Usuario.Email" placeholder="Email" required email></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="text" placeholder="Endereço"></ion-input>
+    <ion-input type="text" name="CPF" [(ngModel)]="login.Usuario.CPF" placeholder="CPF" required></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="text" placeholder="Telefone"></ion-input>
+    <ion-input type="text" name="endereco" [(ngModel)]="login._Login" placeholder="Login" required ></ion-input>
   </ion-item>
+  <ion-item>
+    <ion-input type="password" name="endereco" [(ngModel)]="login.Senha" placeholder="Senha" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Tipo de Usuário</ion-label>
+    <ion-select [(ngModel)]="login.Usuario.TipoUsuario" name="tipousuario" required>
+      <ion-option value="1" name="musico">Músico</ion-option>
+      <ion-option value="2" name="agenciador">Agenciador</ion-option>
+    </ion-select>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Estado</ion-label>
+    <ion-select name="estados" [(ngModel)]="login.Usuario.Estado"  (ionChange)="onSelectEstado($event)" required>
+      <ion-option  [value]="estado.id"  *ngFor="let estado of estados" >{{estado.estado}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Cidade</ion-label>
+    <ion-select name="cidade" [(ngModel)]="login.Usuario.Cidade" required>
+      <ion-option  [value]="cidade.cidade"  *ngFor="let cidade of cidades" >{{cidade.cidade}}</ion-option>
+    </ion-select>
+  </ion-item>
+
   <br>
   <div text-right>
-  <button ion-button block>Cadastrar</button>
+  <button ion-button block (click)="criarUsuario(login)" [disabled]="!formusuario.form.valid">Cadastrar</button>
   <button ion-button color="light" round text-right>Facebook</button>
   <button ion-button color="light" round>Gmail</button>
 </div>
+</form>
 
 
 

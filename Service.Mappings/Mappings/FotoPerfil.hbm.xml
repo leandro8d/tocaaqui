@@ -6,7 +6,7 @@
   <!-- This mapping is created specifically for NH-1059 -->
   <class name="Domain.Entity.FotoPerfil" table="foto_perfil" lazy="true" >
 
-    <id name="IdFoto" column="ID_FOTO" type="int">
+    <id name="IdFoto" column="ID_FOTO" type="long">
       	<generator class="increment"/>
     </id>
 
@@ -18,7 +18,8 @@
 		everything is fine.
 		-->
     
-
+
+
     <!--
 		<join table="junk">
 			<key column="worker_id"/>

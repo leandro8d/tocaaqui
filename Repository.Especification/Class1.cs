@@ -2,7 +2,7 @@
 
 namespace Repository.Especification
 {
-    public interface IUsuarioRepository<TEntity>
+    public class Class1
     {
     }
 }

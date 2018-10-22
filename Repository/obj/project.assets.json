@@ -806,7 +806,6 @@
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
           "Domain.Common": "1.0.0",
-          "Repository.Especification": "1.0.0",
           "Services": "1.0.0"
         },
         "compile": {
