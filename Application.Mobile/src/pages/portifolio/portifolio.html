@@ -1,3 +1,12 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button enable-menu-with-back-views="true" menuToggle="left">
+      <ion-icon ></ion-icon>
+    </button>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
 <ion-content padding>
   <form #formbanda="ngForm">
     
@@ -8,16 +17,12 @@
       </ion-item>
       <ion-item *ngFor="let foto of portifolio.Fotos">
           <ion-avatar>
-            <img [src]="'Data:image/jpeg;base64,'+foto" />
+            <img [src]="'Data:image/jpeg;base64,'+foto.Foto" />
           </ion-avatar>
         </ion-item>
 
     <ion-item>
-      <ion-label id="profile_image" color="primary" stacked>Profilbild wählen</ion-label>
-      <ion-input type="file" (change)="changeListener($event)"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="text" name="Descricao" [(ngModel)]="portifolio.Descricao" placeholder="descrição" required></ion-input>
+      <ion-textarea name="Descricao" [(ngModel)]="portifolio.Descricao" placeholder="descrição" required></ion-textarea>
     </ion-item>
     
     

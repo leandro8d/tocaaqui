@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController,ModalController } from 'ionic-angular';
+import { SessionProvider } from '../../providers/session/session';
+import {BandaProvider} from '../../providers/banda/banda';
+import {PortifolioPage} from '../portifolio/portifolio';
+import {CadastraBandaPage} from '../cadastra-banda/cadastra-banda';
+import {GlobalProvider} from '../../providers/global/global';
+import {ModalbandaComponent} from '../../components/modalbanda/modalbanda'
 
 @Component({
   selector: 'page-bandas',
@@ -10,28 +16,36 @@ export class BandasPage {
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
-
-    // Let's populate this page with some filler content for funzies
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
-
-    this.items = [];
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
+  constructor(public navCtrl: NavController,public session:SessionProvider,public bandaProvider:BandaProvider, public global: GlobalProvider, public modal: ModalController) {
+    this.global.showLoader();
+    this.usuarioLogado = this.session.CurrentUser;
+    this.bandaProvider.ListarBandasUsuario(this.usuarioLogado.Usuario._implementation.IdUsuario).subscribe(data => 
+      {
+        this.global.dismissLoader();
+        this.bandasUsuario = data
+      }
+      ,error => {
+        this.global.showToast(error.error);
+        this.global.dismissLoader();});
   }
 
-  itemTapped(event, item) {
-    // That's right, we're pushing to ourselves!
-    this.navCtrl.push(BandasPage, {
-      item: item
-    });
+
+  public usuarioLogado; 
+  public bandasUsuario:Array<Object>;
+
+  public criarPortifolio(banda){
+    this.navCtrl.push(PortifolioPage,{idBanda:banda.IdBanda,inclusao:true})
   }
+
+  
+  public editarPortifolio(banda){
+    this.navCtrl.push(PortifolioPage,{portifolio:banda.Portifolio,inclusao:false})
+  }
+
+  public editarBanda(banda){
+    this.navCtrl.push(CadastraBandaPage,{banda:banda,inclusao:false})
+  }
+
+
+
 }

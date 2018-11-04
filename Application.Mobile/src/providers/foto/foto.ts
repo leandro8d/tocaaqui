@@ -23,6 +23,12 @@ export class FotoProvider {
 
   }
 
+  public EditarPortifolio(portifolio:any){
+  
+    return this.global.post('/banda/portifolio', portifolio, {});
+
+  }
+
   
 
 

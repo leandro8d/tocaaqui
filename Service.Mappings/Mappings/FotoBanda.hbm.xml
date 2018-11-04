@@ -10,7 +10,7 @@
       	<generator class="increment"/>
     </id>
     <property name="Foto" type="BinaryBlob" column="Foto" not-null="true" />
-    <many-to-one name="Banda"  column="id_banda"  class="Banda"/>
+    <many-to-one name="Banda" fetch="join"  column="id_banda"  class="Banda"/>
     <!--
 		The issue arise when there is not already a <join> element
 		in the root class.  If the <join> element below is uncommented,

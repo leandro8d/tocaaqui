@@ -42,15 +42,21 @@ namespace Application.Web.Controllers
 
         [HttpPut("add")]
         [AllowAnonymous]
-        public JsonResult Insert([FromBody] Login login)
+        public IActionResult Insert([FromBody] Login login)
         {
-            //var obj =  usuarioRepo.Get(1);
-            Usuario.Save(login.Usuario);
-            Login.Save(login);
+            try
+            {
+                //var obj =  usuarioRepo.Get(1);
+                Usuario.Save(login.Usuario);
+                Login.Save(login);
 
 
-            return new JsonResult("Usuario Incluido!");
-
+                return Ok("Usuario Incluido!");
+            }
+            catch (Exception ex)
+            {
+               return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost("")]

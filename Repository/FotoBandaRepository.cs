@@ -18,6 +18,9 @@ namespace Repository
             var result = _session.Query<FotoBanda>().Where(x => x.Banda.IdBanda == banda).FirstOrDefault();
             return result;
         }
+        public void DeleteBanda(long banda){
+            _session.Delete(string.Format("delete from FotoBanda where IdBanda = {0}",banda));
+        }
 
     }
 }

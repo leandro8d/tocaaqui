@@ -31,12 +31,21 @@ export class BandaProvider {
     return this.global.get('/banda',{params:{id:id}});
 
   }
+
+  public GetPortifolio(id:number){
+    return this.global.get('/banda/'+id+'/portifolio',{});
+
+  }
   
   public ListarBandasUsuario(idBanda:number){
     return this.global.get('/banda/'+idBanda+'/bandas',{});
   }
   public ListarTiposMusicais(){
     return this.global.get('/banda/estilosmusicais',{});
+  }
+
+  public Listar(){
+    return this.global.get('/banda/listar',{});
   }
 
 }

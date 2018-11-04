@@ -19,6 +19,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage;
+  home = HomePage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -34,14 +35,23 @@ export class MyApp {
       { title: 'Cadastro de Banda', component: CadastraBandaPage}
     ];
 
+    platform.registerBackButtonAction(() => {
+      if ( this.nav.canGoBack()) { // CHECK IF THE USER IS IN THE ROOT PAGE.
+        this.nav.pop(); // IF IT'S NOT THE ROOT, POP A PAGE.
+      } else {
+        platform.exitApp(); // IF IT'S THE ROOT, EXIT THE APP.
+      }
+    });
+
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
+      this.statusBar.show();
       this.splashScreen.hide();
+      
     });
   }
 

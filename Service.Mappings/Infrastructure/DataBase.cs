@@ -27,13 +27,14 @@ namespace Services.Infrastructure
                 {
                     Configuration.DataBaseIntegration(db =>
                     {
-                        db.ConnectionString = @"Server=127.0.0.1;Port=5432;User ID=postgres;Password=123456;Database=postgres";
+                        db.ConnectionString = @"Server=127.0.0.1;Port=5432;User ID=postgres;Password=123456;Database=tocaaqui";
                         db.Dialect<PostgreSQLDialect>();
                         db.Driver<NpgsqlDriver>();
                     }).AddAssembly("Services");
 
                     _sessionFactory = Configuration.BuildSessionFactory();
                     Configuration.SessionFactory().GenerateStatistics();
+                    Configuration.Cache(x => x.UseQueryCache = false);
                 }
                 return _sessionFactory;
             }

@@ -1,0 +1,74 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Banda </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+
+    <ion-slides paginationClickable=true initialSlide=0 zoom="false" loop=false autoplay=1000 speed=2000 #mySlider>
+      
+      
+      <ion-slide  *ngFor="let fotoport of banda.Portifolio.Fotos">
+        <ion-item  color="dark" class="itemPosicao">
+          <img [src]="'Data:image/jpeg;base64,'+fotoport.Foto">
+        </ion-item>
+      </ion-slide>
+   
+    </ion-slides>
+
+
+
+
+    <ion-card-content>
+      <ion-card-title>
+        {{banda.Nome}}
+      </ion-card-title>
+      <p *ngIf="banda.Portifolio">
+        {{banda.Portifolio.Descricao}}
+      </p>
+
+
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="danger" icon-start *ngFor="let estilo of banda.EstilosMusicais">
+          <ion-icon name='musical-notes'></ion-icon>
+          {{estilo.Descricao}}
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <!-- <button ion-button clear small color="danger" icon-start *ngIf="!banda.Portifolio" (click)="criarPortifolio(banda)">
+        <ion-icon name='musical-notes'></ion-icon>
+        <b>Criar Portifolio</b>
+        <b *ngIf="banda.Portifolio">Criar Portifolio</b>
+      </button>
+      <button ion-button clear small color="danger" icon-start *ngIf="banda.Portifolio" (click)="editarPortifolio(banda)">
+        <ion-icon name='musical-notes'></ion-icon>
+        <b>Editar Portifolio</b>
+      </button>
+    </ion-col>
+    <ion-col text-right>
+      <button ion-button clear small color="danger" (click)="editarBanda(banda)" icon-start>
+        <ion-icon name='share-alt'></ion-icon>
+        Editar Banda
+      </button> -->
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+</ion-content>
+<ion-footer>
+
+  <ion-navbar>
+    <button ion-button clear small color="danger" (click)="fechar()" icon-start>
+      Fechar
+    </button>
+  </ion-navbar>
+
+</ion-footer>

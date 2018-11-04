@@ -14,7 +14,7 @@ export class GlobalProvider {
     console.log('Hello GlobalProvider Provider');
   }
   
-  globalUrl = "http://192.168.15.8:5000/api";
+  globalUrl = "http://localhost:5000/api";
   loading:any;
   get = function (url:string,params:any){
   

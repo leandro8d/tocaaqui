@@ -25,14 +25,14 @@ export class SessionProvider {
   
   Login(objCredentials){
     this.global.showLoader();
-    return this.http.post('http://192.168.15.8:5000/api/Token', objCredentials).subscribe(
+    return this.http.post(this.global.globalUrl+'/Token', objCredentials).subscribe(
     res =>  {
       this.CurrentUser = res; 
       localStorage.setItem('token',this.CurrentUser.Token);
       let nav = this.app.getActiveNav();
       this.global.dismissLoader();
       
-      nav.push(HomePage);
+      nav.setRoot(HomePage);
     },
     msg =>
     { 

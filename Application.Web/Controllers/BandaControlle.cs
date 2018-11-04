@@ -15,10 +15,6 @@ using Microsoft.Extensions.DependencyInjection;
 using NHibernate;
 using Repository;
 using Services.Infrastructure;
-using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.PixelFormats;
-using System.IO;
-using SixLabors.ImageSharp.Formats;
 using Domain;
 
 namespace Application.Web.Controllers
@@ -44,74 +40,61 @@ namespace Application.Web.Controllers
 
         }
 
+
+        // GET api/values
+        [HttpGet("listar")]
+        public IActionResult Listar()
+        {
+            //var obj =  usuarioRepo.Get(1);
+            var dados = Banda.ToList();
+
+            return Ok(dados);
+        }
+
+
         // GET api/values
         [HttpGet("{idUsuario}/Bandas")]
         public ActionResult GetBandas(int idUsuario)
         {
             var dados = new BandaRepository().GetByUser(idUsuario);
-            List<BandaDTO> bandas = null;
-            if (dados != null)
-            {
-                bandas = dados.Select(x => new BandaDTO { Agenda = x.Agenda, Cidade = x.Cidade, Estado = x.Estado, EstilosMusicais = x.EstilosMusicais, Excluida = x.Excluida, FotoBanda = x.Foto != null ? x.Foto : new FotoBanda(), IdBanda = x.IdBanda, Nome = x.Nome, Responsavel = x.Responsavel, Portifolio = x.Portifolio,Foto = x.Foto != null ? Convert.ToBase64String(x.Foto.Foto):null }).ToList();
-            }
-
-            return Ok(bandas);
+         
+            return Ok(dados);
         }
 
 
         // GET api/values
         [HttpPut("")]
-        public IActionResult Insert([FromBody]BandaDTO banda)
+        public IActionResult Insert([FromBody]Banda banda)
         {
-            //var obj =  usuarioRepo.Get(1);
+            try
+            {
+                Banda.Save(banda);
 
-            var bandaent = new Banda(banda.Nome, banda.Estado, banda.Cidade, banda.Excluida, banda.EstilosMusicais, banda.Agenda, Usuario.ToList().ElementAt(0), null);
-
-            var bandaRepo = new BandaRepository();
-            //  var fotobandaRepo = new FotoBandaRepository();
-            //FotoBanda.Save(bandaent);
-            Banda.Save(bandaent);
-
-            var arrayByte = Convert.FromBase64String(banda.Foto.Replace("data:image/*;charset=utf-8;base64,", ""));
-
-            var fotoBanda = new FotoBanda(arrayByte, bandaent);
-            FotoBanda.Save(fotoBanda);
-
-            return new JsonResult("Banda Incluída!");
+                return new JsonResult("Banda Incluída!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
         }
 
         [HttpPost("")]
-        public IActionResult Edit([FromBody]BandaDTO banda)
+        public IActionResult Edit([FromBody]Banda banda)
         {
-            var obj = Banda.Load(banda.IdBanda);
-
-            obj.Nome = banda.Nome;
-            obj.Estado = banda.Estado;
-            obj.Cidade = banda.Cidade;
-            obj.Excluida = banda.Excluida;
-            obj.EstilosMusicais = banda.EstilosMusicais;
-            obj.Agenda = banda.Agenda;
-
-            Banda.Save(obj);
-
-            if (!String.IsNullOrEmpty(banda.Foto))
+            try
             {
-                var arrayByte = Convert.FromBase64String(banda.Foto.Replace("data:image/*;charset=utf-8;base64,", ""));
-                var repositorioFotoBanda = new FotoBandaRepository();
-                var fotoBanda = repositorioFotoBanda.GetByBanda(obj.IdBanda);
-
-                if (fotoBanda != null)
-                {
-                    fotoBanda.Foto = arrayByte;
-                }
-                else
-                    fotoBanda = new FotoBanda(arrayByte, obj);
+                var bandaBd = Banda.Load(banda.IdBanda);
+               
+                Banda.Save(banda);
 
 
-                    FotoBanda.Save(fotoBanda);
+                return new JsonResult("Banda Editada!");
             }
-            return Ok(Json("Banda Alterada!"));
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
         }
 
@@ -120,23 +103,36 @@ namespace Application.Web.Controllers
 
 
         [HttpPut("portifolio")]
-        public IActionResult InsertPortifolio([FromBody] PortifolioDTO portifolio)
+        public IActionResult InsertPortifolio([FromBody] Portifolio portifolio)
         {
-            var portifolioent = new Portifolio(portifolio.IdBanda,null, portifolio.Descricao);
+            try
+            {
+                portifolio.Fotos = portifolio.Fotos.Select(x => new FotoPortifolio(x.Foto, portifolio.IdPortifolio)).ToList();
+                Portifolio.Save(portifolio);
 
-            Portifolio.Save(portifolioent);
-
-            foreach (FotoDTO foto in portifolio.Fotos) {
-                if (!String.IsNullOrEmpty(foto.Foto))
-                {
-                    var arrayByte = Convert.FromBase64String(foto.Foto);
-                    var fotoBanda = new FotoPortifolio(arrayByte,portifolioent.IdPortifolio);
-
-                        FotoPortifolio.Save(fotoBanda);
-                }
+                return new JsonResult("Portifólio Incluído!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
 
-            return new JsonResult("Portifólio Incluído!");
+        }
+
+        [HttpPost("portifolio")]
+        public IActionResult UpdatePortifolio([FromBody] Portifolio portifolio)
+        {
+            try
+            {
+                portifolio.Fotos.Where(x => x.IdPortifolio == 0).Select(x => x.IdPortifolio = portifolio.IdPortifolio);
+                Portifolio.Save(portifolio);
+
+                return new JsonResult("Portifólio Editado!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
         }
 
@@ -146,14 +142,8 @@ namespace Application.Web.Controllers
         public ActionResult GetPortifolio(int idbanda)
         {
             var dados = new PortifolioRepository().GetByBanda(idbanda);
-            PortifolioDTO portifolio = null;
-            if (dados != null)
-            {
-                portifolio = new PortifolioDTO {Banda = dados.Banda,Descricao = dados.Descricao,IdPortifolio = dados.IdPortifolio,Fotos = dados.Fotos.Select(x =>new FotoDTO { Foto = Convert.ToBase64String(x.Foto), IdFoto = x.IdFoto }).ToList(),IdBanda = dados.IdBanda };
-            }
 
-           
-            return Ok(portifolio);
+            return Ok(dados);
         }
 
 

@@ -27,6 +27,8 @@ import { UsuarioProvider } from '../providers/usuario/usuario';
 import { BandaProvider } from '../providers/banda/banda';
 import { FotoProvider } from '../providers/foto/foto';
 
+import {ModalbandaComponent} from '../components/modalbanda/modalbanda';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -35,7 +37,8 @@ import { FotoProvider } from '../providers/foto/foto';
     LoginPage,
     CadastraUsuarioPage,
     CadastraBandaPage,
-    PortifolioPage
+    PortifolioPage,
+    ModalbandaComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { FotoProvider } from '../providers/foto/foto';
     LoginPage,
     CadastraUsuarioPage,
     CadastraBandaPage,
-    PortifolioPage
+    PortifolioPage,
+    ModalbandaComponent
   ],
   providers: [
     StatusBar,

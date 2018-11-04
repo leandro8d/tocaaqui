@@ -16,12 +16,12 @@
     <property name="CPF" type="string" column="cpf" length="11" not-null="true" />
     <property name="Email" type="string" column="email" not-null="true" />
     <property name="TipoUsuario" column="id_tipo_usuario" type="Domain.Common.TipoUsuarioEnum, Domain.Common"/>
-    <bag name="Bandas" inverse="true"   cascade="all">
+    <bag name="Bandas" inverse="true"  fetch="join" cascade="all">
       <key column="id_responsavel"/>
       <one-to-many class="Banda" />
     </bag>
     
-    <array name="Estabelecimentos" table="estabelecimento" inverse="true"  cascade="all">
+    <array name="Estabelecimentos" table="estabelecimento" fetch="join"  inverse="true"  cascade="all">
       <key column="id_responsavel"/>
       <index column="id_estabelecimento"/>
       <one-to-many class="Estabelecimento" />
