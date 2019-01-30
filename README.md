@@ -1,5 +1,5 @@
 <h3> Toca Aqui  </h3>
-<p> Project developed in ASP.NET 2.0 core, Postgresql e Ionic 3. </p>
+<p> Project developed in ASP.NET 2.0 core, Ionic 3 and Postgresql. </p>
 <p> <h3> Folder Structure </h3> </p>
 <pre>
 <b> Source /Application.Mobile </b> - Ionic project files.
